@@ -34,6 +34,17 @@
         </div>
     </nav>
 
+    <!-- MAIN CONTEN -->
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <ul class="list-group" id="posts">
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <!-- Modal SignUp-->
     <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -99,9 +110,13 @@
 
     <!-- Firebase -->
 
-    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 
-    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+    
+    
 
     <script>
         // Your web app's Firebase configuration
@@ -117,6 +132,7 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         const auth = firebase.auth();
+        const fs = firebase.firestore();
 
     </script>
 
