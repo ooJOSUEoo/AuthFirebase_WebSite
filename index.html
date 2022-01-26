@@ -45,12 +45,12 @@
                 <div class="modal-body">
                     <form id="signup-form">
                         <div class="form-floating mb-3">
-                            <input itemid="signup-email" type="email" class="form-control" id="floatingInput"
+                            <input id="signup-email" type="email" class="form-control" id="floatingInput"
                                 placeholder="-" required>
                             <label for="floatingInput">Email</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input itemid="signup-password" type="password" class="form-control" id="floatingInput"
+                            <input id="signup-password" type="password" class="form-control" id="floatingInput"
                                 placeholder="-" required>
                             <label for="floatingInput">Password</label>
                         </div>
@@ -71,32 +71,29 @@
 
     <!-- Firebase -->
 
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.4/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.4/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-          apiKey: apiKeyFB,
-          authDomain: "sitiowebfbjs.firebaseapp.com",
-          projectId: "sitiowebfbjs",
-          storageBucket: "sitiowebfbjs.appspot.com",
-          messagingSenderId: "694331535710",
-          appId: appIdFB,
-          measurementId: "G-PQLXN3QHDY"
-        };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-      </script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
 
-      <!-- CUSTOM CODE -->
-      <script src="FireBase/main.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: apiKeyFB,
+            authDomain: "sitiowebfbjs.firebaseapp.com",
+            projectId: "sitiowebfbjs",
+            storageBucket: "sitiowebfbjs.appspot.com",
+            messagingSenderId: "694331535710",
+            appId: appIdFB,
+            measurementId: "G-PQLXN3QHDY"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+    </script>
+
+    <!-- CUSTOM CODE -->
+    <script src="FireBase/main.js"></script>
 
 </body>
 
