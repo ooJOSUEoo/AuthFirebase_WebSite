@@ -67,6 +67,37 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="apiKeys.js"></script>
+
+    <!-- Firebase -->
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.4/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.4/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: apiKeyFB,
+          authDomain: "sitiowebfbjs.firebaseapp.com",
+          projectId: "sitiowebfbjs",
+          storageBucket: "sitiowebfbjs.appspot.com",
+          messagingSenderId: "694331535710",
+          appId: appIdFB,
+          measurementId: "G-PQLXN3QHDY"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+
+      <!-- CUSTOM CODE -->
+      <script src="FireBase/main.js"></script>
+
 </body>
 
 </html>
