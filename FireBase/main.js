@@ -1,6 +1,8 @@
 //Auth
 //google
 googleLogIn()
+//facebook
+facebookLogIn();
 
 //email, password
 signup()
@@ -28,6 +30,36 @@ function googleLogIn(){
             })
             .catch(error => {
                 console.log(error);
+                if(error.code === 'auth/account-exists-with-different-credential'){
+                    alert('Este usuario ya esta registrado con otra cuenta');
+                }
+            })
+    })
+}
+
+//auth facebook
+function facebookLogIn(){
+    const loginForm = document.querySelector('#login-form');
+    const facebookBtn = document.getElementById('facebookLogin');
+
+    facebookBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const provider = new firebase.auth.FacebookAuthProvider();
+
+        auth.signInWithPopup(provider)
+            .then(result => {
+                console.log(result);
+                loginForm.reset();
+                // close the modal
+                $('#loginModal').modal('hide');
+                $('.modal-backdrop.fade.show').addClass('d-none');
+            })
+            .catch(error => {
+                console.log(error);
+                if(error.code === 'auth/account-exists-with-different-credential'){
+                    alert('Este usuario ya esta registrado con otra cuenta');
+                }
             })
     })
 }
