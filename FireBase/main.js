@@ -1,3 +1,4 @@
+
 //Auth
 //google
 googleLogIn()
@@ -175,9 +176,25 @@ function getPost(){
         if(user){
             fs.collection('posts').get().then(snapshot => {
                 setupPosts(snapshot.docs);
+                loginCheck(user);
             })
         }else{
             setupPosts([]);
+            loginCheck(user);
         }
     })
 }
+
+const logged_out = document.querySelectorAll('.logged-out');
+const logged_in = document.querySelectorAll('.logged-in');
+
+    const loginCheck = user => {
+        if(user){
+            logged_in.forEach(item => item.classList.remove('d-none'));
+            logged_out.forEach(item => item.classList.add('d-none'));
+        }
+        else{
+            logged_in.forEach(item => item.classList.add('d-none'));
+            logged_out.forEach(item => item.classList.remove('d-none'));
+        }
+    }
