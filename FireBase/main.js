@@ -1,8 +1,38 @@
 //Auth
+//google
+googleLogIn()
+
+//email, password
 signup()
 login()
 logout()
+//futions
 
+//auth google
+function googleLogIn(){
+    const loginForm = document.querySelector('#login-form');
+    const googleBtn = document.getElementById('googleLogin');
+
+    googleBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const provider = new firebase.auth.GoogleAuthProvider();
+
+        auth.signInWithPopup(provider)
+            .then(result => {
+                console.log(result);
+                loginForm.reset();
+                // close the modal
+                $('#loginModal').modal('hide');
+                $('.modal-backdrop.fade.show').addClass('d-none');
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    })
+}
+
+//auth email and password
 function signup(){
     const signupForm = document.querySelector('#signup-form');
     //crear cuenta en firebase Email y contraseña
