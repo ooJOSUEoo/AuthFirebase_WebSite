@@ -1,5 +1,6 @@
 signup()
 login()
+logout()
 
 function signup(){
     const signupForm = document.querySelector('#signup-form');
@@ -55,6 +56,24 @@ function login(){
                 console.log(errorCode);
                 console.log(errorMessage);
                 // ..
+            });
+    })
+}
+
+function logout(){
+    const logout = document.getElementById('logout');
+
+    logout.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        auth.signOut()
+            .then(() => {
+                // Sign-out successful.
+                console.log('Sesión cerrada');
+            })
+            .catch((error) => {
+                // An error happened.
+                console.log(error);
             });
     })
 }
